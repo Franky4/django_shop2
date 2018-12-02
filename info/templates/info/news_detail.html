@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    {{ news_item.title }} - {{ block.super }}
+{% endblock %}
+
+{% block content %}
+    <h1 class="mt-5">
+        {{ news_item.title }}
+    </h1>
+    <p>
+        {{ news_item.body }}
+    </p>
+{% endblock %}

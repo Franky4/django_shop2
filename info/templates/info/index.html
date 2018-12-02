@@ -1,0 +1,22 @@
+{% extends 'blog/index.html' %}
+
+
+{% block title %}
+    NEWS LIST
+{% endblock %}
+
+{% block content %}
+    <h1 class="mb-5">News:</h1>
+    {% for news_item in news %}
+        <div class="card mb-3">
+            <div class="card-header">
+                {{ news_item.date_pub }}
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">{{ news_item.title }}</h5>
+                <p class="card-text">{{ news_item.body|truncatewords:15 }}</p>
+                <a href="{{ news_item.get_absolut_url }}" class="btn btn-light">Read</a>
+            </div>
+        </div>
+    {% endfor %}
+{% endblock %}
